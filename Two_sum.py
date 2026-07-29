@@ -39,3 +39,31 @@ def two_num(nums, target):
             return [seen[needed],i]
     seen[num] = i
 
+# ___________________________________________________________________________________________________________________________________________________________________________________
+
+def twoSum(nums, target):
+    # EXPLANATION: Empty dictionary to store numbers we've already seen
+    # Key = the number, Value = its index position
+    seen = {}
+
+    # EXPLANATION: Loop through every number in the list
+    # i = current index (0, 1, 2...), num = actual number at that index
+    for i, num in enumerate(nums):
+        
+        # EXPLANATION: What number do we need to reach the target?
+        # If target is 9 and num is 2, we need 7
+        needed = target - num
+        
+        # EXPLANATION: Check if we've already seen this 'needed' number before
+        # If yes, we found our pair!
+        if needed in seen:
+            # EXPLANATION: Return index of the 'needed' number (from dictionary)
+            # and current index i
+            return [seen[needed], i]
+        
+        # EXPLANATION: If we didn't find the pair, store current number in dictionary
+        # So future numbers can find it as their 'needed' partner
+        seen[num] = i
+    
+    # EXPLANATION: Should never reach here because problem says solution exists
+    return []
