@@ -72,3 +72,36 @@ class Solution:
         # EXPLANATION: Return k which is the count of elements not equal to val
         # k also represents the new length of array (first k elements are good)
         return k
+
+
+
+# ___________________________________________________________________________________________________________________________________________________________________________________
+
+'''
+nums = [3,2,2,3], val = 3
+
+Initial: nums = [3,2,2,3], k = 0 
+
+i=0, num=3:
+  num == val → skip (do nothing)
+  nums = [3,2,2,3], k = 0
+
+i=1, num=2:
+  num != val → place at nums[k]
+  nums[0] = 2 → nums = [2,2,2,3]
+  k = 1
+
+i=2, num=2:
+  num != val → place at nums[k]
+  nums[1] = 2 → nums = [2,2,2,3]
+  k = 2
+
+i=3, num=3:
+  num == val → skip (do nothing)
+  nums = [2,2,2,3], k = 2
+
+Return: k = 2
+First 2 elements: [2,2] ✓ (good elements)
+Remaining: [2,3] (ignored, doesn't matter)
+
+'''
